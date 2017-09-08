@@ -2,19 +2,18 @@ angular.module('myapp')
 .config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "templates/home.html"
+        templateUrl : "templates/home.html",
+        controller : "HomeCtrl"
     })
-    .when("/201", {
-        templateUrl : "templates/201.html",
-        controller : "201Ctrl"
+    .when("/205", {
+        templateUrl : "templates/205.html",
+        controller : "205Ctrl"
     })
-    .when("/green", {
-        templateUrl : "templates/green.html"
-    })
-    .when("/blue", {
-        templateUrl : "templates/blue.html"
+    .when("/login", {
+        templateUrl : "templates/login.html",
+        controller: "LoginCtrl"
     })
     .otherwise({
-        templateUrl : "templates/home.html"
+        redirectTo: '/'
     });
 });

@@ -7,14 +7,16 @@
     "start": "node ./bin/www",
     "migrate": "node ./migrate",
     "seed": "node ./seeder"
-
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
+    "express-jwt": "^5.3.0",
     "jade": "~1.11.0",
+    "jsonwebtoken": "^8.0.0",
     "mongoose": "^4.11.10",
     "morgan": "~1.8.1",
     "mqtt": "^2.12.0",
