@@ -1,0 +1,45 @@
+<md-content layout layout-align="center top" layout-wrap >
+	<section layout flex="100"  layout-align="space-around">
+		<md-switch ng-model="switch.light" ng-change="changeState('lights',switch.light)" aria-label="Switch Light" >
+			Light Switch 
+		</md-switch>
+		<md-switch ng-model="switch.fan" ng-change="changeState('fans',switch.fan)" aria-label="Switch Fan">
+			Fan Switch
+		</md-switch>
+		<md-switch ng-model="switch.ac" ng-change="changeState('ACs',switch.ac)" aria-label="Switch AC">
+			AC Switch
+		</md-switch>
+
+	</section>
+	<!-- 3 columns of light -->	
+	<section layout flex="100">	
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+	</section>
+
+	<!-- 2 fans -->
+	<section layout flex="100">
+		<div ng-include="'images/fan.svg'" flex="20" flex-offset="20" layout class="fan" ng-class="{'on':switch.fan}"></div>
+		<div ng-include="'images/fan.svg'" flex="20" flex-offset="20" layout class="fan" ng-class="{'on':switch.fan}"></div>
+	</section>
+	<!-- 3 columns of light -->
+	<section layout flex="100">
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+	</section>
+
+	<!-- 2 fans -->
+	<section layout flex="100">
+		<div ng-include="'images/fan.svg'" flex="20" flex-offset="20" layout class="fan" ng-class="{'on':switch.fan}"></div>
+		<div ng-include="'images/fan.svg'" flex="20" flex-offset="20" layout class="fan" ng-class="{'on':switch.fan}"></div>
+	</section>
+
+	<!-- 3 columns of light -->
+	<section layout flex="100">
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+		<div ng-include="'images/tube_light.svg'" flex="20" flex-offset="10" layout class="light" ng-class="{'on':switch.light}"></div>
+	</section>
+</md-content>

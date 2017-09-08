@@ -6,3 +6,18 @@ angular.module('myapp')
   	$scope.channels = res.data;
   })
 })
+.controller('201Ctrl', function($scope, $http){
+	// $scope.switch={
+	// 	light:false,
+	// 	fan:false,
+	// 	ac:false,
+
+	// 	changeLight:function(){
+			
+	// 	}
+	// }
+	$scope.changeState = function(appliance, state){
+		var state_string = state? "on" : "off";
+		$http.get(API_ROOT+"205/"+appliance+"/"+state_string);
+	}
+})

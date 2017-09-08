@@ -4,8 +4,9 @@ angular.module('myapp')
     .when("/", {
         templateUrl : "templates/home.html"
     })
-    .when("/red", {
-        templateUrl : "templates/red.html"
+    .when("/201", {
+        templateUrl : "templates/201.html",
+        controller : "201Ctrl"
     })
     .when("/green", {
         templateUrl : "templates/green.html"
