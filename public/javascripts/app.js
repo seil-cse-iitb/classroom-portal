@@ -1,4 +1,4 @@
-angular.module('myapp', ['ngMaterial','ngRoute','ngResource','angular-jwt'])
+angular.module('myapp', ['ngMaterial','ngRoute','ngResource','angular-jwt','satellizer'])
 
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
@@ -14,9 +14,22 @@ angular.module('myapp', ['ngMaterial','ngRoute','ngResource','angular-jwt'])
 	      return null;
 	    }
 
-	    return localStorage.getItem('id_token');
+	    return localStorage.getItem('satellizer_token');
 	  }]
 	});
 
 	$httpProvider.interceptors.push('jwtInterceptor');
-});
+})
+.config(function($authProvider){
+	$authProvider.oauth2({
+      name: 'iitbsso',
+      url: '/auth/provider',
+      clientId: 'HkRquN6lSDR8HFIAwclxuznLQjjMmAuNUJp3G7pQ',
+      redirectUri: window.location.origin,
+      authorizationEndpoint: 'https://gymkhana.iitb.ac.in/sso/oauth/authorize',
+      optionalUrlParams: ['scope'],
+      scope:['ldap'],
+      scopePrefix:'',
+      scopeDelimiter: ' '
+    });
+})
